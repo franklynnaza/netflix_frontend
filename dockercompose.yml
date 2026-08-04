@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: 348230509416.dkr.ecr.us-east-2.amazonaws.com/netflix_frontend:LATEST_TAG
+    ports:
+      - "3000:3000"
+    networks:
+      - dev-net
+
+  backend:
+    image: 348230509416.dkr.ecr.us-east-2.amazonaws.com/netflix_backend:LATEST_TAG
+    ports:
+      - "8080:8080"
+    networks:
+      - dev-net
+
+networks:
+  dev-net:
